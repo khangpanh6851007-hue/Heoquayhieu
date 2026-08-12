@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Heo Quay Hiếu - Chuyên Heo Quay Gia Công & Đặt Tiệc Mỏ Cày, Vĩnh Long</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#fff1f2',
+              500: '#e11d48',
+              600: '#ca8a04',
+              700: '#b91c1c',
+              900: '#7f1d1d',
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    .glass {
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+    .dark .glass {
+      background: rgba(15, 23, 42, 0.75);
+    }
+  </style>
+</head>
+<body class="bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-100 font-sans transition-colors duration-300">
+
+  <!-- Header / Navigation -->
+  <header class="sticky top-0 z-40 glass border-b border-slate-200/50 dark:border-slate-800/50">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
+      <div class="flex items-center space-x-2">
+        <div class="w-10 h-10 rounded-full bg-red-600 text-white flex items-center justify-center font-bold text-xl shadow-lg shadow-red-500/30">
+          H
+        </div>
+        <div>
+          <h1 class="font-extrabold text-lg leading-none text-red-600 dark:text-red-500">HEO QUAY HIẾU</h1>
+          <p class="text-[10px] text-slate-500 dark:text-slate-400">Thơm Ngon - Giòn Rụm - Uy Tín</p>
+        </div>
+      </div>
+
+      <div class="flex items-center space-x-3">
+        <!-- Toggle Dark Mode -->
+        <button id="theme-toggle" class="p-2 rounded-full bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-300">
+          <i data-lucide="moon" class="w-5 h-5 dark:hidden"></i>
+          <i data-lucide="sun" class="w-5 h-5 hidden dark:block"></i>
+        </button>
+        <!-- Button Gọi -->
+        <a href="tel:0972674838" class="hidden sm:flex items-center space-x-1 bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-xl text-sm font-semibold transition-all shadow-md">
+          <i data-lucide="phone" class="w-4 h-4"></i>
+          <span>0972 674 838</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative overflow-hidden py-12 md:py-20 bg-gradient-to-b from-red-500/10 via-transparent to-transparent">
+    <div class="max-w-6xl mx-auto px-4 text-center">
+      <span class="inline-block bg-red-100 dark:bg-red-900/40 text-red-700 dark:text-red-300 text-xs font-bold px-3 py-1 rounded-full mb-4">
+        🔥 Đặt Heo Quay Đám Cưới • Đám Hỏi • Thôi Nôi
+      </span>
+      <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight mb-4">
+        HEO QUAY NGUYÊN CON & GIA CÔNG <br class="hidden sm:block"/>
+        <span class="text-red-600 dark:text-red-500">ĐẠT CHUẨN VỆ SINH ATTP</span>
+      </h2>
+      <p class="text-slate-600 dark:text-slate-300 max-w-2xl mx-auto mb-8 text-sm md:text-base">
+        Chuyên gia công và cung cấp heo quay ngon chuẩn vị, da giòn rụm, thịt mềm mọng nước tại Mỏ Cày, Vĩnh Long. Phục vụ chu đáo cho các dịp lễ lớn, cúng kiếng, tiệc cưới hỏi.
+      </p>
+
+      <div class="flex flex-col sm:flex-row justify-center gap-3">
+        <a href="tel:0972674838" class="flex items-center justify-center space-x-2 bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-6 rounded-xl shadow-lg shadow-red-600/30 transition-all">
+          <i data-lucide="phone-call" class="w-5 h-5"></i>
+          <span>Gọi Đặt Hàng Ngay: 0972 674 838</span>
+        </a>
+        <a href="#services" class="flex items-center justify-center space-x-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 font-semibold py-3 px-6 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-700 transition-all">
+          <span>Xem Dịch Vụ</span>
+          <i data-lucide="arrow-down" class="w-4 h-4"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Dịch Vụ (Services) -->
+  <section id="services" class="py-12 max-w-6xl mx-auto px-4">
+    <div class="text-center mb-10">
+      <h3 class="text-2xl font-bold mb-2">Dịch Vụ Của Chúng Tôi</h3>
+      <p class="text-slate-500 text-sm">Nhận đặt heo quay theo yêu cầu kích thước và số lượng</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <!-- Card 1 -->
+      <div class="bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 p-6 rounded-2xl shadow-sm hover:shadow-md transition-all">
+        <div class="w-12 h-12 bg-amber-100 dark:bg-amber-900/30 text-amber-600 rounded-xl flex items-center justify-center mb-4">
+          <i data-lucide="flame" class="w-6 h-6"></i>
+        </div>
+        <h4 class="font-bold text-lg mb-2">Heo Quay Gia Công</h4>
+        <p class="text-slate-500 dark:text-slate-400 text-sm">Nhận gia công quay heo của khách mang đến với công thức ướp đậm đà, da giòn lâu.</p>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 p-6 rounded-2xl shadow-sm hover:shadow-md transition-all">
+        <div class="w-12 h-12 bg-red-100 dark:bg-red-900/30 text-red-600 rounded-xl flex items-center justify-center mb-4">
+          <i data-lucide="shopping-bag" class="w-6 h-6"></i>
+        </div>
+        <h4 class="font-bold text-lg mb-2">Bán Nguyên Con</h4>
+        <p class="text-slate-500 dark:text-slate-400 text-sm">Cung cấp heo quay nguyên con từ heo sữa đến heo lớn, trang trí đẹp mắt thích hợp cúng kiếng.</p>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 p-6 rounded-2xl shadow-sm hover:shadow-md transition-all">
+        <div class="w-12 h-12 bg-rose-100 dark:bg-rose-900/30 text-rose-600 rounded-xl flex items-center justify-center mb-4">
+          <i data-lucide="heart" class="w-6 h-6"></i>
+        </div>
+        <h4 class="font-bold text-lg mb-2">Đám Cưới & Đám Hỏi</h4>
+        <p class="text-slate-500 dark:text-slate-400 text-sm">Chuyên làm mâm cúng cưới hỏi sang trọng, giao đúng giờ hẹn, uy tín hàng đầu.</p>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 p-6 rounded-2xl shadow-sm hover:shadow-md transition-all">
+        <div class="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 text-blue-600 rounded-xl flex items-center justify-center mb-4">
+          <i data-lucide="cake" class="w-6 h-6"></i>
+        </div>
+        <h4 class="font-bold text-lg mb-2">Thôi Nôi & Tiệc Tùng</h4>
+        <p class="text-slate-500 dark:text-slate-400 text-sm">Phục vụ đầy đủ các dòng heo quay cho tiệc đầy tháng, thôi nôi, khai trương, tân gia.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cam kết chất lượng -->
+  <section class="py-12 bg-slate-100 dark:bg-slate-900/50">
+    <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+      <div class="flex flex-col items-center">
+        <i data-lucide="check-circle-2" class="w-10 h-10 text-emerald-500 mb-2"></i>
+        <h5 class="font-bold">Thịt Tươi Sạch 100%</h5>
+        <p class="text-xs text-slate-500 mt-1">Đảm bảo nguồn gốc rõ ràng, kiểm định an toàn</p>
+      </div>
+      <div class="flex flex-col items-center">
+        <i data-lucide="sparkles" class="w-10 h-10 text-amber-500 mb-2"></i>
+        <h5 class="font-bold">Da Giòn Món Gia Truyền</h5>
+        <p class="text-xs text-slate-500 mt-1">Gia vị thấm sâu, da nổ giòn rụm không bị mềm</p>
+      </div>
+      <div class="flex flex-col items-center">
+        <i data-lucide="truck" class="w-10 h-10 text-blue-500 mb-2"></i>
+        <h5 class="font-bold">Giao Tận Nơi Bến Tre & Vĩnh Long</h5>
+        <p class="text-xs text-slate-500 mt-1">Đúng hẹn - Heo còn nóng hổi khi nhận</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Địa chỉ & Liên hệ -->
+  <section class="py-12 max-w-6xl mx-auto px-4">
+    <div class="bg-white dark:bg-slate-900 rounded-3xl p-6 md:p-10 border border-slate-200 dark:border-slate-800 shadow-lg flex flex-col md:flex-row gap-8 items-center">
+      <div class="flex-1 space-y-4">
+        <span class="text-xs font-bold text-red-600 uppercase tracking-wider">Thông tin liên hệ</span>
+        <h3 class="text-2xl font-bold">CƠ SỞ HEO QUAY HIẾU</h3>
+        
+        <div class="space-y-3 text-sm">
+          <div class="flex items-start space-x-3">
+            <i data-lucide="map-pin" class="w-5 h-5 text-red-600 shrink-0 mt-0.5"></i>
+            <span><strong>Địa chỉ:</strong> Ấp 3, Quốc lộ 60, Xã Mỏ Cày, Vĩnh Long</span>
+          </div>
+          <div class="flex items-center space-x-3">
+            <i data-lucide="phone" class="w-5 h-5 text-red-600 shrink-0"></i>
+            <span><strong>Điện thoại / Zalo:</strong> <a href="tel:0972674838" class="text-red-600 font-bold hover:underline">0972 674 838</a></span>
+          </div>
+          <div class="flex items-center space-x-3">
+            <i data-lucide="clock" class="w-5 h-5 text-red-600 shrink-0"></i>
+            <span><strong>Thời gian phục vụ:</strong> 24/7 (Nhận đặt trước cho tiệc cưới, lễ)</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="w-full md:w-1/2 h-64 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800">
+        <!-- Google Maps Embed Placeholder -->
+        <iframe 
+          title="Google Map"
+          src="https://maps.google.com/maps?q=Mỏ%20Cày%20Vĩnh%20Long&t=&z=13&ie=UTF8&iwloc=&output=embed" 
+          width="100%" 
+          height="100%" 
+          style="border:0;" 
+          allowfullscreen="" 
+          loading="lazy">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-6 border-t border-slate-200 dark:border-slate-800 text-center text-xs text-slate-500">
+    <p>© 2026 Heo Quay Hiếu. Bản quyền thuộc về cơ sở Heo Quay Hiếu Mỏ Cày - Vĩnh Long.</p>
+  </footer>
+
+  <!-- Thanh hỗ trợ nhanh trên mobile (Fixed Bottom Bar) -->
+  <div class="fixed bottom-0 left-0 right-0 glass border-t border-slate-200 dark:border-slate-800 p-3 sm:hidden z-50 flex gap-2">
+    <a href="tel:0972674838" class="flex-1 bg-red-600 text-white font-bold py-2.5 rounded-xl flex items-center justify-center space-x-2 text-sm shadow-md">
+      <i data-lucide="phone" class="w-4 h-4"></i>
+      <span>Gọi ngay</span>
+    </a>
+    <a href="https://zalo.me/0972674838" target="_blank" class="flex-1 bg-blue-600 text-white font-bold py-2.5 rounded-xl flex items-center justify-center space-x-2 text-sm shadow-md">
+      <i data-lucide="message-circle" class="w-4 h-4"></i>
+      <span>Nhắn Zalo</span>
+    </a>
+  </div>
+
+  <script>
+    // Khởi tạo icon Lucide
+    lucide.createIcons();
+
+    // Xử lý Dark Mode
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    themeToggleBtn.addEventListener('click', () => {
+      document.documentElement.classList.toggle('dark');
+    });
+  </script>
+</body>
+</html>

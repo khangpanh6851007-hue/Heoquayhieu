@@ -1,55 +1,34 @@
-# 🐷 Heo Quay Hiếu - Website Kinh Doanh & Đặt Món
+# Heo Quay Hiếu 🐷🔥
 
-<div align="center">
-
-![Status](https://img.shields.io/badge/Status-Active-success?style=for-the-badge)
-![Mobile Friendly](https://img.shields.io/badge/Mobile-Optimized-blue?style=for-the-badge)
-![Platform](https://img.shields.io/badge/Platform-Acode%20%2F%20Trebedit-orange?style=for-the-badge)
-![Year](https://img.shields.io/badge/Year-2026-red?style=for-the-badge)
-
-Website giới thiệu và kinh doanh đặc sản heo quay, heo sữa và dịch vụ heo gia công theo yêu cầu, được tối ưu hóa để chạy trực tiếp trên thiết bị di động thông qua các ứng dụng lập trình như **Acode** hoặc **Trebedit**.
-
-</div>
+Ứng dụng web giới thiệu cửa hàng, tính tiền nhanh và quản lý bài đăng/sản phẩm cho cơ sở **Heo Quay Hiếu** tại Mỏ Cày, Vĩnh Long. Được thiết kế với giao diện hiện đại, tối ưu cho cả thiết bị di động và máy tính.
 
 ---
 
-## 📍 Thông Tin Liên Hệ & Địa Chỉ
+## 🚀 Tính năng nổi bật
 
-* **Tên cửa hàng:** Heo Quay Hiếu
-* **Địa chỉ:** 201B Đường Bùi Quang Chiêu, Mỏ Cày, Vĩnh Long, Việt Nam
-* **Điện thoại / Hotline:** 0976274838 hoặc 0972674838
-* **Bản đồ:** [Google Maps - Heo Quay Hiếu]
-* https://maps.app.goo.gl/HrkuJA4DW9nWARbY7
-
----
-
-## 🚀 Tính Năng Nổi Bật (Giao Diện 5.0)
-
-* **Thiết kế hiện đại (Responsive):** Sử dụng Tailwind CSS qua CDN, giao diện bắt mắt, chuẩn màu ẩm truyền thống, hiển thị mượt mà trên mọi dòng smartphone và máy tính.
-* **Không cần Server / Database:** Tích hợp tính năng quản lý bài viết, hình ảnh và video trực tiếp bằng **LocalStorage** của trình duyệt.
-* **Quản trị linh hoạt:** Cho phép chủ quán tự đăng bài viết mới, tải lên hình ảnh/video sản phẩm và xóa bài viết trực tiếp ngay trên giao diện web mà không cần kiến thức lập trình phức tạp.
-* **Tương thích di động tuyệt đối:** Viết bằng một tệp HTML duy nhất (`index.html`), dễ dàng chỉnh sửa và chạy thử nghiệm trên **Acode** hoặc **Trebedit**.
+- **Đồng hồ & Lịch thời gian thực:** Tự động cập nhật ngày tháng năm theo định dạng tiếng Việt kèm đồng hồ kỹ thuật số.
+- **Tính tiền nhanh theo trọng lượng:** Công cụ giúp khách hàng tự động tính toán tạm tính chi phí dựa trên loại sản phẩm (heo sữa quay, heo lớn quay nguyên con, thịt quay cắt miếng) và trọng lượng (kg).
+- **Gửi đơn đặt hàng nhanh:** Hỗ trợ kết nối trực tiếp đến số Hotline / Zalo của cửa hàng để chốt đơn nhanh chóng.
+- **Hệ thống quản lý bài viết / sản phẩm (`LocalStorage`):** 
+  - Cho phép quản lý bảng tin, đăng tải sản phẩm mới kèm tiêu đề, nội dung chi tiết.
+  - Hỗ trợ tải lên hình ảnh trực tiếp (chuyển đổi Base64) và đính kèm link video.
+  - Dữ liệu lưu trữ an toàn ngay trên trình duyệt mà không cần cơ sở dữ liệu phức tạp.
+- **Liên kết mạng xã hội & bản đồ:** Tích hợp nút gọi nhanh Hotline/Zalo, truy cập Facebook cá nhân và định vị Google Maps tiện lợi.
 
 ---
 
-## 📱 Hướng Dẫn Chạy Trên Acode / Trebedit (Điện Thoại)
+## 🛠 Công nghệ sử dụng
 
-1. Tải ứng dụng **Acode** hoặc **Trebedit** trên kho ứng dụng (CH Play / App Store).
-2. Tạo một tệp mới và đặt tên là `index.html`.
-3. Sao chép toàn bộ mã nguồn của dự án dán vào tệp `index.html`.
-4. Lưu tệp lại và chọn tính năng **Preview (Xem trước)** để khởi chạy website trên trình duyệt điện thoại.
-
----
-
-## 🛠️ Công Nghệ Sử Dụng
-
-* **HTML5 / CSS3**
-* **Tailwind CSS v3** (via CDN)
-* **FontAwesome 6.4.0** (Icons)
-* **JavaScript (Vanilla JS & LocalStorage API)**
+- **HTML5 / CSS3**
+- **Tailwind CSS** (CDN) qua script tối ưu giao diện.
+- **FontAwesome 6.4.0** cho các biểu tượng trực quan.
+- **Vanilla JavaScript (ES6+)** xử lýlogic tương tác và LocalStorage.
 
 ---
 
-## 📄 Bản Quyền & Giấy Phép
+## 📂 Cấu trúc dự án
 
-© 2026 Heo Quay Hiếu. All rights reserved. Phát triển dành riêng cho việc kinh doanh ẩm thực địa phương tại Vĩnh Long.
+```text
+heo-quay-hieu/
+├── index.html       # Tệp mã nguồn chính chứa toàn bộ giao diện và logic JavaScript
+└── README.md        # Tài liệu hướng dẫn sử dụng dự án

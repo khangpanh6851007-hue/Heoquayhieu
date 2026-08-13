@@ -1,20 +1,19 @@
-name: Deploy Heo Quay Hieu to GitHub Pages
+name: Deploy Heo Quay Hiếu to GitHub Pages
 
 on:
-  # Tự động kích hoạt khi có lệnh push lên nhánh chính (main hoặc master)
   push:
     branches: ["main"]
 
-  # Cho phép kích hoạt thủ công từ tab "Actions" trên GitHub
+  # Cho phép kích hoạt thủ công từ tab Actions trên GitHub
   workflow_dispatch:
 
-# Phân quyền cho GITHUB_TOKEN để triển khai lên GitHub Pages
+# Thiết lập quyền hạn cho GITHUB_TOKEN để triển khai lên GitHub Pages
 permissions:
   contents: read
   pages: write
   id-token: write
 
-# Chỉ cho phép một tiến trình deploy chạy tại một thời điểm để tránh xung đột
+# Đảm bảo chỉ có một tiến trình triển khai chạy tại một thời điểm
 concurrency:
   group: "pages"
   cancel-in-progress: false
@@ -26,21 +25,17 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      # Bước 1: Checkout mã nguồn từ repository
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # Bước 2: Cấu hình môi trường GitHub Pages
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
-      # Bước 3: Đóng gói tệp (vì website là HTML tĩnh đơn lẻ ở thư mục gốc)
-      - name: Upload artifact
+      - name: Upload artifact (index.html & assets)
         uses: actions/upload-pages-artifact@v3
         with:
           path: '.'
 
-      # Bước 4: Tiến hành Deploy lên hệ thống GitHub Pages
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4

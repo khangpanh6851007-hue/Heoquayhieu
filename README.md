@@ -16,9 +16,10 @@ Website giới thiệu và kinh doanh đặc sản heo quay, heo sữa và dịc
 ## 📍 Thông Tin Liên Hệ & Địa Chỉ
 
 * **Tên cửa hàng:** Heo Quay Hiếu
-* **Địa chỉ:** 67 QL57, Mỏ Cày, Vĩnh Long
-* **Điện thoại / Hotline:** [0972 674 838](tel:0972674838)
-* **Bản đồ:** [Google Maps - Heo Quay Hiếu](https://maps.app.goo.gl/G6AdMsrsA4uLkXu29)
+* **Địa chỉ:** 201B Đường Bùi Quang Chiêu, Mỏ Cày, Vĩnh Long, Việt Nam
+* **Điện thoại / Hotline:** 0976274838 hoặc 0972674838
+* **Bản đồ:** [Google Maps - Heo Quay Hiếu]
+* https://goo.gl/maps/VSvTRC4zDT8TCMAD8
 
 ---
 

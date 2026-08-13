@@ -38,9 +38,12 @@
             </div>
             <div class="flex flex-wrap justify-center gap-3 text-sm">
                 <a href="tel:0972674838" class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-xl font-semibold flex items-center gap-2 shadow transition">
-                    <i class="fa-solid fa-phone"></i> 0976274838 hoặc 0972674838
+                    <i class="fa-solid fa-phone"></i> 0976274838 hoặc 0972674838 (Zalo)
                 </a>
-                <a href="https://maps.app.goo.gl/HrkuJA4DW9nWARbY7" target="_blank" class="bg-amber-600 hover:bg-amber-700 text-white px-4 py-2 rounded-xl font-semibold flex items-center gap-2 shadow transition">
+                <a href="https://www.facebook.com/hieu.nguyen.44666" target="_blank" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-xl font-semibold flex items-center gap-2 shadow transition">
+                    <i class="fa-brands fa-facebook"></i> Facebook
+                </a>
+                <a href="https://maps.app.goo.gl/XFbdQcE9e2gAexAk7" target="_blank" class="bg-amber-600 hover:bg-amber-700 text-white px-4 py-2 rounded-xl font-semibold flex items-center gap-2 shadow transition">
                     <i class="fa-solid fa-map-location-dot"></i> Bản đồ đường đi
                 </a>
             </div>
@@ -67,35 +70,68 @@
     <!-- Main Content Grid -->
     <main class="max-w-6xl mx-auto px-4 mb-12 grid grid-cols-1 lg:grid-cols-3 gap-8">
         
-        <!-- Left Column: Admin Post Creator (LocalStorage) -->
-        <div class="lg:col-span-1 bg-white p-6 rounded-2xl shadow-md border border-gray-100 h-fit">
-            <h3 class="text-lg font-bold text-gray-800 mb-4 flex items-center gap-2 border-b pb-2">
-                <i class="fa-solid fa-pen-to-square text-amber-600"></i> Đăng Bài / Sản Phẩm Mới
-            </h3>
-            <form id="post-form" class="space-y-4">
-                <div>
-                    <label class="block text-xs font-semibold uppercase text-gray-600 mb-1">Tiêu đề bài viết/Sản phẩm</label>
-                    <input type="text" id="post-title" required class="w-full px-3 py-2 border rounded-xl focus:outline-none focus:ring-2 focus:ring-amber-500 text-sm" placeholder="VD: Heo sữa quay da giòn 3kg...">
+        <!-- Left Column: Price Estimator & Admin Post Creator -->
+        <div class="lg:col-span-1 space-y-6">
+            
+            <!-- Price Estimator & Quick Order -->
+            <div class="bg-white p-6 rounded-2xl shadow-md border border-amber-200">
+                <h3 class="text-lg font-bold text-amber-800 mb-3 flex items-center gap-2 border-b pb-2">
+                    <i class="fa-solid fa-calculator text-amber-600"></i> Tính Tiền Nhanh Theo Trọng Lượng
+                </h3>
+                <div class="space-y-3">
+                    <div>
+                        <label class="block text-xs font-semibold uppercase text-gray-600 mb-1">Loại sản phẩm</label>
+                        <select id="calc-type" class="w-full px-3 py-2 border rounded-xl focus:outline-none focus:ring-2 focus:ring-amber-500 text-sm bg-white">
+                            <option value="350000">Heo sữa quay (350.000đ / kg)</option>
+                            <option value="250000">Heo lớn quay nguyên con (250.000đ / kg)</option>
+                            <option value="280000">Thịt heo quay cắt miếng (280.000đ / kg)</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold uppercase text-gray-600 mb-1">Trọng lượng ước tính (kg)</label>
+                        <input type="number" id="calc-weight" min="0.5" step="0.5" value="3" class="w-full px-3 py-2 border rounded-xl focus:outline-none focus:ring-2 focus:ring-amber-500 text-sm" placeholder="Nhập số kg...">
+                    </div>
+                    <div class="bg-amber-50 p-3 rounded-xl border border-amber-100 flex justify-between items-center">
+                        <span class="text-xs font-bold text-amber-900 uppercase">Tạm tính:</span>
+                        <span id="calc-total" class="text-lg font-extrabold text-red-600">1.050.000 đ</span>
+                    </div>
+                    <button onclick="orderQuick()" class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-2.5 rounded-xl transition shadow-md text-sm flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-paper-plane"></i> Gửi đơn đặt hàng nhanh (Zalo / Hotline)
+                    </button>
                 </div>
-                <div>
-                    <label class="block text-xs font-semibold uppercase text-gray-600 mb-1">Nội dung chi tiết</label>
-                    <textarea id="post-content" rows="3" required class="w-full px-3 py-2 border rounded-xl focus:outline-none focus:ring-2 focus:ring-amber-500 text-sm" placeholder="Mô tả chi tiết giá cả, trọng lượng..."></textarea>
-                </div>
-                <div>
-                    <label class="block text-xs font-semibold uppercase text-gray-600 mb-1">Tải lên hình ảnh</label>
-                    <input type="file" id="post-image" accept="image/*" class="w-full text-xs text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-semibold file:bg-amber-50 file:text-amber-700 hover:file:bg-amber-100 cursor-pointer">
-                </div>
-                <div>
-                    <label class="block text-xs font-semibold uppercase text-gray-600 mb-1">Link Video (YouTube/MP4 tùy chọn)</label>
-                    <input type="text" id="post-video" class="w-full px-3 py-2 border rounded-xl focus:outline-none focus:ring-2 focus:ring-amber-500 text-sm" placeholder="Dán link video...">
-                </div>
-                <button type="submit" class="w-full bg-amber-600 hover:bg-amber-700 text-white font-bold py-2.5 rounded-xl transition shadow-md text-sm">
-                    Đăng Bài Ngay (Lưu LocalStorage)
-                </button>
-            </form>
-            <div class="mt-4 pt-4 border-t text-center">
-                <button onclick="clearLocalStorage()" class="text-xs text-red-500 hover:underline">Xóa toàn bộ bài đăng đã lưu</button>
             </div>
+
+            <!-- Admin Post Creator (LocalStorage) -->
+            <div class="bg-white p-6 rounded-2xl shadow-md border border-gray-100">
+                <h3 class="text-lg font-bold text-gray-800 mb-4 flex items-center gap-2 border-b pb-2">
+                    <i class="fa-solid fa-pen-to-square text-amber-600"></i> Đăng Bài / Sản Phẩm Mới
+                </h3>
+                <form id="post-form" class="space-y-4">
+                    <div>
+                        <label class="block text-xs font-semibold uppercase text-gray-600 mb-1">Tiêu đề bài viết/Sản phẩm</label>
+                        <input type="text" id="post-title" required class="w-full px-3 py-2 border rounded-xl focus:outline-none focus:ring-2 focus:ring-amber-500 text-sm" placeholder="VD: Heo sữa quay da giòn 3kg...">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold uppercase text-gray-600 mb-1">Nội dung chi tiết</label>
+                        <textarea id="post-content" rows="3" required class="w-full px-3 py-2 border rounded-xl focus:outline-none focus:ring-2 focus:ring-amber-500 text-sm" placeholder="Mô tả chi tiết giá cả, trọng lượng..."></textarea>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold uppercase text-gray-600 mb-1">Tải lên hình ảnh</label>
+                        <input type="file" id="post-image" accept="image/*" class="w-full text-xs text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-semibold file:bg-amber-50 file:text-amber-700 hover:file:bg-amber-100 cursor-pointer">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold uppercase text-gray-600 mb-1">Link Video (YouTube/MP4 tùy chọn)</label>
+                        <input type="text" id="post-video" class="w-full px-3 py-2 border rounded-xl focus:outline-none focus:ring-2 focus:ring-amber-500 text-sm" placeholder="Dán link video...">
+                    </div>
+                    <button type="submit" class="w-full bg-amber-600 hover:bg-amber-700 text-white font-bold py-2.5 rounded-xl transition shadow-md text-sm">
+                        Đăng Bài Ngay (Lưu LocalStorage)
+                    </button>
+                </form>
+                <div class="mt-4 pt-4 border-t text-center">
+                    <button onclick="clearLocalStorage()" class="text-xs text-red-500 hover:underline">Xóa toàn bộ bài đăng đã lưu</button>
+                </div>
+            </div>
+
         </div>
 
         <!-- Right Column: Posts / Products Feed -->
@@ -119,7 +155,8 @@
     <footer class="bg-gray-900 text-white py-8 border-t border-gray-800">
         <div class="max-w-6xl mx-auto px-4 text-center space-y-3">
             <h4 class="text-lg font-bold text-amber-500">HEO QUAY HIẾU - MỎ CÀY, VĨNH LONG</h4>
-            <p class="text-xs text-gray-400">Địa chỉ:201B Đường Bùi Quang Chiêu, Mỏ Cày, Vĩnh Long, Việt Nam | Hotline: 0972674838 hoặc 0976274838</p>
+            <p class="text-xs text-gray-400">Địa chỉ: 201B Đường Bùi Quang Chiêu, Mỏ Cày, Vĩnh Long, Việt Nam</p>
+            <p class="text-xs text-gray-400">Hotline / Zalo: 0972674838 hoặc 0976274838 | <a href="https://www.facebook.com/hieu.nguyen.44666" target="_blank" class="text-blue-400 hover:underline">Facebook cá nhân</a></p>
             <p class="text-xs text-gray-500">Bản quyền © 2026 Heo Quay Hiếu. Thiết kế giao diện chuyên nghiệp.</p>
         </div>
     </footer>
@@ -129,13 +166,10 @@
         // 1. Auto Clock & Calendar
         function updateClockAndCalendar() {
             const now = new Date();
-            
-            // Calendar formatting (Vietnamese)
             const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
             const dateString = now.toLocaleDateString('vi-VN', options);
             document.getElementById('current-calendar').innerHTML = `<i class="fa-solid fa-calendar-days"></i> <span>${dateString}</span>`;
 
-            // Clock formatting
             const hours = String(now.getHours()).padStart(2, '0');
             const minutes = String(now.getMinutes()).padStart(2, '0');
             const seconds = String(now.getSeconds()).padStart(2, '0');
@@ -144,7 +178,33 @@
         setInterval(updateClockAndCalendar, 1000);
         updateClockAndCalendar();
 
-        // 2. LocalStorage Posts Management
+        // 2. Price Calculator Feature Logic
+        const calcType = document.getElementById('calc-type');
+        const calcWeight = document.getElementById('calc-weight');
+        const calcTotal = document.getElementById('calc-total');
+
+        function updateCalculation() {
+            const pricePerKg = parseFloat(calcType.value);
+            const weight = parseFloat(calcWeight.value) || 0;
+            const total = pricePerKg * weight;
+            calcTotal.innerText = total.toLocaleString('vi-VN') + ' đ';
+        }
+
+        calcType.addEventListener('change', updateCalculation);
+        calcWeight.addEventListener('input', updateCalculation);
+        updateCalculation();
+
+        function orderQuick() {
+            const typeText = calcType.options[calcType.selectedIndex].text;
+            const weight = calcWeight.value;
+            const total = calcTotal.innerText;
+            const message = `Xin chào Heo Quay Hiếu, tôi muốn đặt hàng:\n- Loại: ${typeText}\n- Trọng lượng: ${weight} kg\n- Tạm tính: ${total}\nVui lòng liên hệ lại với tôi qua Zalo hoặc Hotline!`;
+            
+            window.location.href = `tel:0972674838`;
+            alert(`Đã chuẩn bị thông tin đơn hàng:\n\n${message}\n\nĐang chuyển hướng sang gọi hotline / Zalo cửa hàng để chốt đơn!`);
+        }
+
+        // 3. LocalStorage Posts Management
         const STORAGE_KEY = 'heo_quay_hieu_posts_v1';
 
         function getStoredPosts() {
@@ -196,7 +256,6 @@
             `).join('');
         }
 
-        // Handle Form Submission & Image FileReader
         document.getElementById('post-form').addEventListener('submit', function(e) {
             e.preventDefault();
             const title = document.getElementById('post-title').value;
@@ -257,7 +316,6 @@
             return text.replace(/[&<>"']/g, m => map[m]);
         }
 
-        // Initial render
         renderPosts();
     </script>
 </body>
